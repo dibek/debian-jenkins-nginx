@@ -7,7 +7,8 @@
     - { role: tecris.maven, maven_major: 3, maven_release: 3.5.0, maven_home_parent_directory: /opt }
     - geerlingguy.docker
     - nginx  
-    - geerlingguy.jenkins  
+    - gitflow
+    - geerlingguy.jenkins
   vars:
     java_version: 8
     java_subversion: 144

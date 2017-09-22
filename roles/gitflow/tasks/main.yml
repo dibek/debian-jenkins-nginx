@@ -1,0 +1,9 @@
+- name: Install git-flow
+  become : yes
+  become_user : root
+  apt: name={{ item }} update_cache=yes
+  with_items:
+    - git-flow
+    - cowsay
+  tags: git-flow
+
