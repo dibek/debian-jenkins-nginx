@@ -1,0 +1,4 @@
+- src: http://github.com/idealista-tech/wildfly-role.git
+  scm: git
+  version: 1.0.0
+  name: wildfly

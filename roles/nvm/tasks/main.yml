@@ -1,0 +1,26 @@
+- name: Install dependencies
+  become : yes
+  become_user : root	
+  apt: name={{ item }} update_cache=yes 
+  with_items:
+    - git
+    - curl
+  tags: nvm
+
+- name: Download nvm
+  become: true
+  become_user: pvuser
+  git: 
+    repo: 'https://github.com/creationix/nvm.git'
+    dest: '/home/pvuser/.nvm'
+    version: v0.32.1 
+  tags: nvm
+
+- name: Install nvm
+  become: true
+  become_user: pvuser
+  command: ~/.nvm/install.sh
+  tags: nvm	
+
+
+

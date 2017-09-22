@@ -1,0 +1,1 @@
+ ansible-playbook --become-user=root playbook-oracle.yml --connection=local

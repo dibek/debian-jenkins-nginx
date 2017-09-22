@@ -1,0 +1,16 @@
+- hosts: all
+  roles:
+    - williamyeh.oracle-java
+    - geerlingguy.java  
+      #   - wildfly
+    - nvm  
+    - { role: tecris.maven, maven_major: 3, maven_release: 3.5.0, maven_home_parent_directory: /opt }
+    - geerlingguy.docker
+    - nginx  
+    - geerlingguy.jenkins  
+  vars:
+    java_version: 8
+    java_subversion: 144
+    java_download_from_oracle: false
+    jdk_tarball_file: jdk-8u144-linux-x64
+    java_packages: openjdk-8-jdk  

@@ -1,0 +1,8 @@
+- hosts: all
+  roles:
+    - williamyeh.oracle-java
+  vars:
+    java_version: 8
+    java_subversion: 144
+    java_download_from_oracle: false
+    jdk_tarball_file: jdk-8u144-linux-x64      

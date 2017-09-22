@@ -1,0 +1,29 @@
+---
+## General
+
+wildfly_version: "10.1.0.Final"
+
+## Service options
+
+# Owner
+wildfly_user: wildfly
+wildfly_group: wildfly
+wildfly_user_home: "/home/{{ wildfly_user }}"
+wildfly_user_shell: "/bin/sh"
+wildfly_user_uid: 1005
+
+# start on boot
+wildfly_service_enabled: True
+# current state: started, stopped
+wildfly_service_state: started
+
+# Files & Paths
+wildfly_install_path: "/opt"
+wildfly_conf_path: "/etc/wildfly"
+wildfly_home_path: "{{ wildfly_install_path }}/wildfly"
+
+# Network
+wildfly_bind: 0.0.0.0
+
+# Management
+wildfly_management_users: []
