@@ -1,0 +1,3 @@
+<driver name="oracle" module="com.oracledatabase.oracle">
+                        <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+                    </driver>
