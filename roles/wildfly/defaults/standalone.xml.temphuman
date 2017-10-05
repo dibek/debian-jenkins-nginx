@@ -137,7 +137,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:4.0">
             <datasources>
  <datasource jta="true" jndi-name="java:jboss/datasources/eNNOVDS" pool-name="eNNOVDS" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:oracle:thin:@91.134.230.30:1526/pvdevp.ennov</connection-url>
+                    <connection-url>jdbc:oracle:thin:@172.20.1.48:1526/pvdevp.ennov</connection-url>
                     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>
@@ -152,7 +152,7 @@
                     </validation>
                 </datasource>
  <datasource jta="true" jndi-name="java:jboss/datasources/eNNOVvetind_ownerDS" pool-name="eNNOVvetind_ownerDS" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:oracle:thin:@91.134.230.30:1526/pvdevp.ennov</connection-url>
+                    <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevp.ennov</connection-url>
                     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>

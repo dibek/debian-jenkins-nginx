@@ -1,5 +1,5 @@
  <datasource jta="true" jndi-name="java:jboss/datasources/eNNOVvetind_ownerDS" pool-name="eNNOVvetind_ownerDS" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:oracle:thin:@91.134.230.30:1526/pvdevp.ennov</connection-url>
+                    <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevp.ennov</connection-url>
                     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
                     <driver>oracle</driver>
                     <security>
