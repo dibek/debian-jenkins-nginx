@@ -1,0 +1,15 @@
+ <datasource jta="true" jndi-name="java:jboss/datasources/eNNOVDS" pool-name="eNNOVDS" enabled="true" use-ccm="true">
+                    <connection-url>jdbc:oracle:thin:@172.20.1.48:1526/pvdevt.ennov</connection-url>
+                    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+                    <driver>oracle</driver>
+                    <security>
+                        <user-name>T_HUMAN25_OWNER</user-name>
+                        <password>T_HUMAN25_OWNER</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
+                        <background-validation>true</background-validation>
+                        <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
+                    </validation>
+                </datasource>
