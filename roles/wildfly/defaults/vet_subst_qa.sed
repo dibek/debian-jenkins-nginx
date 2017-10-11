@@ -1,4 +1,4 @@
 /@@datasource_vet@@/ {
-  r datasource_vet.xml
+  r datasource_vet_qa.xml
   d
 }

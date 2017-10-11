@@ -1,4 +1,7 @@
 #!/bin/bash
-sed -f vet_subst.sed standalone.xml.template > standalone.xml.tempvet
-sed -f human_subst.sed standalone.xml.tempvet > standalone.xml.temphuman
-sed -f oracle_driver_subst.sed standalone.xml.temphuman > standalone.xml
+export temp_folder="./generated/qa"
+echo $temp_folder
+mkdir   $temp_folder -p
+sed -f vet_subst_qa.sed standalone.xml.template > $temp_folder/standalone.xml.tempvet
+sed -f human_subst_qa.sed $temp_folder/standalone.xml.tempvet > $temp_folder/standalone.xml.temphuman
+sed -f oracle_driver_subst.sed $temp_folder/standalone.xml.temphuman > $temp_folder/standalone.xml

@@ -1,4 +1,4 @@
 /@@datasource_human@@/ {
-  r datasource_human.xml
+  r datasource_human_qa.xml
   d
 }
