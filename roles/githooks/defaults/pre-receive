@@ -1,0 +1,90 @@
+#!/bin/bash
+#
+# pre-receive hook for Commit Check
+#
+
+COMPANY_EMAIL="ennov.com"
+
+readonly PROGNAME=$(basename $0)
+readonly PROGDIR=$(readlink -m $(dirname $0))
+
+check_single_commit()
+{
+  COMMIT_CHECK_STATUS=0
+  REVIEW_STATUS=0
+  #
+  # Put here any logic you want for your commit
+  #
+  # COMMIT_MESSAGE contains commit message
+  # COMMIT_AUTHOR contains commit author (without email)
+  #
+  # Set COMMIT_CHECK_STATUS to non zero to indicate an error
+  # Only run this script for the master branch. You can remove this
+  # if block if you wish to run it for others as well.
+
+    check_commit_message
+    check_master_branch
+    check_dev_branch
+
+}
+
+check_commit_message() {
+    if [[ "#$COMMIT_MESSAGE" < 15 ]]; then
+        COMMIT_CHECK_STATUS=1
+        echo "message too short"
+    fi
+}
+
+check_master_branch() {
+    if [[ $REFNAME = "refs/heads/master" ]]; then
+        if [[ "$COMMIT_MESSAGE" == *"PA"* ]]; then
+          COMMIT_CHECK_STATUS=0
+
+        elsif
+          COMMIT_CHECK_STATUS=1
+           echo "Release tag is missing"
+        fi
+    fi
+}
+
+check_dev_branch() {
+    if [[ $REFNAME = "refs/heads/dev" ]]; then
+       if [[ "$COMMIT_MESSAGE" == *"REVIEW"* ]]; then
+          REVIEW_STATUS=1
+          echo "found review tag"
+       fi
+    fi
+}
+
+check_all_commits()
+{
+  REVISIONS=$(git rev-list $OLD_REVISION..$NEW_REVISION)
+  IFS='\n' read -ra LIST_OF_REVISIONS <<< "$REVISIONS"
+
+  for rid in "${!LIST_OF_REVISIONS[@]}"; do
+    REVISION=${LIST_OF_REVISIONS[rid]}
+    COMMIT_MESSAGE=$(git cat-file commit $REVISION | sed '1,/^$/d')
+    COMMIT_AUTHOR=$(git cat-file commit $REVISION | grep committer | sed 's/^.* \([^@ ]\+@[^ ]\+\) \?.*$/\1/' | sed 's/<//' | sed 's/>//' | sed 's/@$COMPANY_EMAIL//')
+    check_single_commit
+
+    if [ "$COMMIT_CHECK_STATUS" != "0" ]; then
+      echo "Commit validation failed for commit $REVISION" >&2
+      exit 1
+    fi
+
+     if [[ $REFNAME = "refs/heads/dev" ]] ; then
+      if [ "$REVIEW_STATUS" != "1" ]; then
+        echo "Commit validation (Review missing) failed for commit $REVISION" >&2
+        exit 1
+      fi
+    fi
+
+  done
+}
+
+# Get custom commit message format
+while read OLD_REVISION NEW_REVISION REFNAME ; do
+  check_all_commits
+done
+
+exit 0
