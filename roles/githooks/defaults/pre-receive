@@ -37,7 +37,7 @@ check_commit_message() {
 
 check_master_branch() {
     if [[ $REFNAME = "refs/heads/master" ]]; then
-        if [[ "$COMMIT_MESSAGE" == *"PA"* ]]; then
+        if [[ "$TAG_RELEASE" == *"PA"* ]]; then
           COMMIT_CHECK_STATUS=0
 
         elsif
@@ -49,7 +49,7 @@ check_master_branch() {
 
 check_dev_branch() {
     if [[ $REFNAME = "refs/heads/dev" ]]; then
-       if [[ "$COMMIT_MESSAGE" == *"REVIEW"* ]]; then
+       if [[ "$TAG_REVIEW" == *"REVIEW"* ]]; then
           REVIEW_STATUS=1
           echo "found review tag"
        fi
@@ -65,7 +65,9 @@ check_all_commits()
     REVISION=${LIST_OF_REVISIONS[rid]}
     COMMIT_MESSAGE=$(git cat-file commit $REVISION | sed '1,/^$/d')
     COMMIT_AUTHOR=$(git cat-file commit $REVISION | grep committer | sed 's/^.* \([^@ ]\+@[^ ]\+\) \?.*$/\1/' | sed 's/<//' | sed 's/>//' | sed 's/@$COMPANY_EMAIL//')
-    check_single_commit
+    TAG_RELEASE=$(git cat-file tag  $REVISION | grep PA)
+    TAG_REVIEW=$(git cat-file tag  $REVISION | grep REVIEW)
+   check_single_commit
 
     if [ "$COMMIT_CHECK_STATUS" != "0" ]; then
       echo "Commit validation failed for commit $REVISION" >&2
