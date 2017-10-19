@@ -136,7 +136,7 @@
         <subsystem xmlns="urn:jboss:domain:bean-validation:1.0"/>
         <subsystem xmlns="urn:jboss:domain:datasources:4.0">
             <datasources>
-		    @@datasource_human@@
+		    @@datasource@@
  <datasource jta="true" jndi-name="java:jboss/datasources/eNNOVvetind_ownerDS" pool-name="eNNOVvetind_ownerDS" enabled="true" use-ccm="true">
                     <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevt.ennov</connection-url>
                     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
@@ -164,7 +164,7 @@
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
 		    </driver>
-	           @@oracle_driver@@		
+	           @@oracle_driver@@
                 </drivers>
             </datasources>
         </subsystem>

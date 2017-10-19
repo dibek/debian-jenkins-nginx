@@ -1,11 +1,10 @@
-<datasource jta="true" jndi-name="java:jboss/datasources/eNNOVvetind_ownerDS" pool-name="eNNOVvetind_ownerDS"
-            enabled="true" use-ccm="true">
-    <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevt.ennov</connection-url>
+<datasource jta="true" jndi-name="java:jboss/datasources/eNNOVDS" pool-name="eNNOVDS" enabled="true" use-ccm="true">
+    <connection-url>jdbc:oracle:thin:@172.20.1.48:1526/pvdevt.ennov</connection-url>
     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
     <driver>oracle</driver>
     <security>
-        <user-name>T_VET82_OWNER</user-name>
-        <password>T_VET82_OWNER</password>
+        <user-name>T_HUMAN207_OWNER</user-name>
+        <password>T_HUMAN207_OWNER</password>
     </security>
     <validation>
         <valid-connection-checker

@@ -1,4 +1,4 @@
-/@@datasource_human@@/ {
+/@@datasource@@/ {
   r datasource_human_qa_247.xml
   d
 }

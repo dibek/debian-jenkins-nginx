@@ -4,8 +4,8 @@
     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
     <driver>oracle</driver>
     <security>
-        <user-name>T_VET82_OWNER</user-name>
-        <password>T_VET82_OWNER</password>
+        <user-name>T_VET81_OWNER</user-name>
+        <password>T_VET81_OWNER</password>
     </security>
     <validation>
         <valid-connection-checker

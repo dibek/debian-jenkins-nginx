@@ -1,5 +1,5 @@
-/@@datasource_human@@/ {
-  r datasource_human_dev.xml
+/@@datasource@@/ {
+  r datasource_human_dev_247.xml
   d
 }
 

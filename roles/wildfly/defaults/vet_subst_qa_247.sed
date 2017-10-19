@@ -1,4 +1,4 @@
-/@@datasource_vet@@/ {
+/@@datasource@@/ {
   r datasource_vet_qa_247.xml
   d
 }
