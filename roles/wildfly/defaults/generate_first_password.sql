@@ -1,0 +1,1 @@
+Insert into SEC_USER_PASSWORDS (USER_NAME,PW_CHANGE_DT,KEY_1) values ('AIS_VET82','aey6Yk3o2hiNnRp0hYY3Zo==','NhdBjx10xh==');

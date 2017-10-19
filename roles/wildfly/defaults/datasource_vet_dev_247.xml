@@ -1,4 +1,4 @@
-<datasource jta="true" jndi-name="java:jboss/datasources/eNNOVvetind_ownerDS" pool-name="eNNOVvetind_ownerDS"
+<datasource jta="true" jndi-name="java:jboss/datasources/PvVet247DS" pool-name="PvVet247DS"
             enabled="true" use-ccm="true">
     <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevt.ennov</connection-url>
     <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>

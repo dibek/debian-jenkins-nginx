@@ -1,15 +1,17 @@
- <datasource jta="true" jndi-name="java:jboss/datasources/eNNOVvetind_ownerDS" pool-name="eNNOVvetind_ownerDS" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevp.ennov</connection-url>
-                    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
-                    <driver>oracle</driver>
-                    <security>
-                        <user-name>VET81_OWNER</user-name>
-                        <password>VET81_OWNER</password>
-                    </security>
-                    <validation>
-                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
-                        <background-validation>true</background-validation>
-                        <stale-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
-                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
-                    </validation>
-                </datasource>
+<datasource jta="true" jndi-name="java:jboss/datasources/PvVet247DS" pool-name="PvVet247DS" enabled="true" use-ccm="true">
+    <connection-url>jdbc:oracle:thin:@172.20.1.148:1526/pvdevp.ennov</connection-url>
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+    <driver>oracle</driver>
+    <security>
+        <user-name>VET81_OWNER</user-name>
+        <password>VET81_OWNER</password>
+    </security>
+    <validation>
+        <valid-connection-checker
+            class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker"/>
+        <background-validation>true</background-validation>
+        <stale-connection-checker
+            class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker"/>
+        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter"/>
+    </validation>
+</datasource>
