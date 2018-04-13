@@ -1,11 +1,11 @@
 ---
 # Edition can be one of: 'ce' (Community Edition) or 'ee' (Enterprise Edition).
 docker_edition: 'ce'
-docker_package: "docker-{{ docker_edition }}"
+docker_package: "docker"
 docker_package_state: present
 
 # Docker Compose options.
-docker_install_compose: true
+docker_install_compose: false
 docker_compose_version: "1.13.0"
 docker_compose_path: /usr/local/bin/docker-compose
 
