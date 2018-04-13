@@ -1,1 +1,2 @@
-sudo ansible-playbook --become-user=root playbook-all.yml --connection=local
+#!/usr/bin/env bash
+sudo ansible-playbook --become-user=root server.yml --connection=local
